@@ -22,7 +22,7 @@
         <header class="detail">
             <div class="back"></div>
             <div class="nav">
-                <i class="fas fa-arrow-left"></i><a href="">Accueil</a><i class="fas fa-chevron-left"></i><a href="">Science-Fiction</a><i class="fas fa-chevron-left"></i><a href="">Sky doll</a><i class="fas fa-chevron-left"></i><a href="">La ville blanche</a>
+                <i class="fas fa-arrow-left"></i><a href="index.html">Accueil</a><i class="fas fa-chevron-left"></i><a href="">Science-Fiction</a><i class="fas fa-chevron-left"></i><a href="">Sky doll</a><i class="fas fa-chevron-left"></i><a href="">La ville blanche</a>
             </div>
             <h1>SKY DOLL</h1>
             <p>T1 : La ville blanche</p>
@@ -43,8 +43,8 @@
             <a href="">Science-fiction</a>
             <a class="boutton-deux" href="">Android</a>
             <div class="container flex">
-                <div class="synopsis">
-                    <p>Noa est une poupée qui doit être remontée toutes les trente-trois heures par une clé que détient son possesseur, ce qui fait de lui le maître de son existence. Mais Noa n'est pas comme les autres androïdes : elle est capable de rêver, et de se souvenir de ses songes. Alors que son maître, "Dieu", meurt dans d'étranges conditions, elle parvient à s'échapper en se cachant dans la soute d'un vaisseau spatial piloté par Roy et Jahu, deux envoyés de la grande Ludovique, papesse qui ...
+                <div id="text" class="synopsis">
+                    <p id="one" class="button">Noa est une poupée qui doit être remontée toutes les trente-trois heures par une clé que détient son possesseur, ce qui fait de lui le maître de son existence. Mais Noa n'est pas comme les autres androïdes : elle est capable de rêver, et de se souvenir de ses songes. Alors que son maître, "Dieu", meurt dans d'étranges conditions, elle parvient à s'échapper en se cachant dans la soute d'un vaisseau spatial piloté par Roy et Jahu, deux envoyés de la grande Ludovique, papesse qui ...
 
                     </p>
                     <div class="gallery flex">
@@ -182,10 +182,84 @@
             </article>
         </section>
 
+<!--/---------------------------pop-up description-------------------->
+
+
+<div id="modal-containerone">
+    <div class="modal-backgroundone">
+        <div class="ferme"></div>
+        <div class="fermedeux"></div>
+        <div class="modalone">
+
+
+            <div class="bullevideoone">
+              
+                
+                <div id="progressbar"></div>
+                <div id="scrollPath"></div>
+               
+
+                <div class="description flex">
+                  <div class="close">
+                  <span class="cross-un"></span>
+                  <span class="cross-deux"></span>
+                </div>
+                   <div class="container-image"></div>
+                   <p>
+                    Iamque non umbratis fallaciis res agebatur, sed qua palatium est extra muros, armatis omne circumdedit. ingressusque obscuro iam die, ablatis regiis indumentis Caesarem tunica texit et paludamento communi, eum post haec nihil passurum velut mandato principis iurandi crebritate confirmans et statim inquit exsurge et inopinum carpento privato inpositum ad Histriam duxit prope oppidum Polam, ubi quondam peremptum Constantini filium accepimus Crispum. <br><br>
+
+                    Quare hoc quidem praeceptum, cuiuscumque est, ad tollendam amicitiam valet; illud potius praecipiendum fuit, ut eam diligentiam adhiberemus in amicitiis comparandis, ut ne quando amare inciperemus eum, quem aliquando odisse possemus. Quin etiam si minus felices in diligendo fuissemus, ferendum id Scipio potius quam inimicitiarum tempus cogitandum putabat. <br><br>
+
+                    Quid? qui se etiam nunc subsidiis patrimonii aut amicorum liberalitate sustentant, hos perire patiemur? An, si qui frui publico non potuit per hostem, hic tegitur ipsa lege censoria; quem is frui non sinit, qui est, etiamsi non appellatur, hostis, huic ferri auxilium non oportet? Retinete igitur in provincia diutius eum, qui de sociis cum hostibus, de civibus cum sociis faciat pactiones, qui hoc etiam se pluris esse quam collegam putet, quod ille vos tristia voltuque deceperit, ipse numquam se minus quam erat, nequam esse simularit. Piso autem alio quodam modo gloriatur se brevi tempore perfecisse, ne Gabinius unus omnium nequissimus existimaretur. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--/--------------------------fin pop-up-------------------->
+
+
 
 
 
 
     </main>
 </body>
+
+
+ <script type="text/javascript">
+ 
+
+     
+          const one = document.querySelector('#one');
+     one.addEventListener('click', open);
+     
+   function open(){
+        const body = document.querySelector('body');
+        const popUp = document.querySelector('#modal-containerone');
+        popUp.classList.toggle('one');
+        popUp.classList.remove('out');
+        body.classList.toggle('modal-active');
+   }
+     
+     
+          const close = document.querySelector('.close');
+     close.addEventListener('click', toggleClass);
+     
+   function toggleClass(){
+        const body = document.querySelector('body');
+        const popUp = document.querySelector('#modal-containerone');
+        popUp.classList.add('out');
+        popUp.classList.remove('one');
+        body.classList.remove('modal-active');
+   }
+    
+
+    
+    
+    </script>
 </html>
