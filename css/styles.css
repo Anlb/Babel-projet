@@ -36,7 +36,7 @@ img {
 }
 * {
   box-sizing: border-box;
-  outline: none;
+  outline: none !important;
 }
 html,
 body {
@@ -167,6 +167,7 @@ a {
   height: 286px;
   left: 59%;
   top: 40%;
+  box-shadow: 13px 0px 13px rgba(0, 0, 0, 0.09);
 }
 .containercolor .carousel .imageun .text h1 {
   font-family: Roboto;
@@ -185,6 +186,37 @@ a {
   align-items: center;
   text-transform: uppercase;
   line-height: 23px;
+}
+.containercolor .carousel .imageun .text .suivantdroit-text {
+  font-size: 120px;
+  font-weight: 300;
+  color: white;
+  position: absolute;
+  right: -20px;
+  bottom: 2px;
+  opacity: 0.5;
+  height: 50px;
+  width: 50px;
+}
+.containercolor .carousel .imageun .text .suivantdroit-text span {
+  height: 2px;
+  width: 13px;
+  transform: rotate(45deg);
+  color: white;
+  opacity: 0.9;
+  position: absolute;
+  background: #9F9F9F;
+}
+.containercolor .carousel .imageun .text .suivantdroit-text span:before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 13px;
+  transform: rotate(-90deg);
+  top: 6px;
+  position: absolute;
+  left: 6px;
+  background: #9F9F9F;
 }
 .containercolor .carousel .imagedeux {
   width: 260px;
@@ -300,15 +332,28 @@ a {
   align-items: center;
   position: relative;
 }
-.containercolor footer input {
+.containercolor footer .container-input {
+  background: rgba(48, 212, 222, 0.29);
+  border: none;
+  border-radius: 53px;
+  width: 493px;
+  height: 58px;
+  outline: none;
+  position: relative;
+}
+.containercolor footer .container-input input {
   background: #FFFFFF;
-  border: 3px solid rgba(10, 124, 131, 0.69);
+  border: none;
   border-radius: 53px;
   width: 489px;
   height: 54px;
   outline: none;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  padding-left: 30px;
 }
-.containercolor footer input::-webkit-input-placeholder {
+.containercolor footer .container-input input::-webkit-input-placeholder {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -321,11 +366,13 @@ a {
   padding-left: 20px;
   color: #A0A0A0;
 }
-.containercolor footer label {
+.containercolor footer .container-input label {
   position: absolute;
-  left: 60%;
+  right: 20px;
+  top: 20px;
+  color: #A0A0A0;
 }
-.containercolor footer label i {
+.containercolor footer .container-input label i {
   font-size: 20px;
 }
 .detail {
@@ -339,6 +386,15 @@ a {
   height: 400px;
   background-repeat: no-repeat;
   filter: blur(6px);
+  box-shadow: 5px 4px 28px rgba(0, 0, 0, 0.57);
+}
+.detail .back:before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 110%;
+  background-color: black;
+  opacity: 0.6;
 }
 .detail .nav {
   position: absolute;
@@ -365,9 +421,9 @@ a {
 .detail h1 {
   position: absolute;
   color: white;
-  font-size: 60px;
+  font-size: 53px;
   top: 100px;
-  left: 31%;
+  left: 34%;
   font-weight: 500;
 }
 .detail p {
@@ -375,7 +431,7 @@ a {
   color: white;
   font-size: 30px;
   top: 180px;
-  left: 31%;
+  left: 34%;
   font-weight: 500;
 }
 .detail .image-principal img {
@@ -388,7 +444,7 @@ a {
 }
 .detail .notation {
   position: absolute;
-  left: 31%;
+  left: 34%;
   top: 230px;
 }
 .detail .notation i {
@@ -423,24 +479,28 @@ section.description {
 section.description a {
   position: absolute;
   font-size: 14px;
-  width: 106px;
+  width: 136px;
   height: 24px;
   left: 32%;
+  margin-top: 10px;
   background: #7ACED5;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   text-align: center;
   color: white;
   padding: 3px;
+  font-weight: 700;
+  margin-right: 20px;
+  text-transform: uppercase;
 }
 section.description a.boutton-deux {
-  left: 39%;
+  left: 41%;
 }
 section.description .container {
   justify-content: flex-end;
 }
 section.description .container .synopsis {
-  width: calc(25% - 20px);
+  width: calc(19% - 20px);
   margin: 10px;
   padding-top: 220px;
   cursor: pointer;
@@ -450,9 +510,18 @@ section.description .container .synopsis {
   font-size: 20px;
   color: #000000;
 }
+section.description .container .synopsis p {
+  border: solid 1px #84DAE2;
+  padding: 10px;
+}
+section.description .container .synopsis p strong {
+  color: #84DAE2;
+  font-weight: 700;
+}
 section.description .container .synopsis .gallery {
   width: 100%;
   padding-top: 30px;
+  margin-left: -20px;
 }
 section.description .container .synopsis .gallery img {
   width: calc(50% - 40px);
@@ -461,17 +530,21 @@ section.description .container .synopsis .gallery img {
 }
 section.description .container .proposition {
   padding-top: 220px;
-  width: calc(65% - 20px);
+  width: calc(71% - 20px);
   margin: 10px;
 }
 section.description .container .proposition .tomes {
   justify-content: center;
   align-items: center;
+  padding-bottom: 18px;
 }
 section.description .container .proposition .tomes p {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 30px;
 }
 section.description .container .proposition .tomes img {
   width: 138px;
@@ -486,7 +559,10 @@ section.description .container .proposition .suggestion {
 section.description .container .proposition .suggestion p {
   width: 100%;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-bottom: 30px;
 }
 section.description .container .proposition .suggestion img {
   width: 138px;
@@ -505,6 +581,7 @@ section.artiste .premier {
   margin: 10px;
   padding-left: 0px;
   justify-content: flex-start;
+  margin-left: -200px;
 }
 section.artiste .premier .container-image {
   width: calc(30% - 20px);
@@ -514,30 +591,42 @@ section.artiste .premier .container-image {
 section.artiste .premier .container-text {
   width: calc(40% - 20px);
   margin: 10px;
-  border-bottom: solid 1px #84DAE2;
 }
 section.artiste .premier .container-text p {
   width: calc(100% - 20px);
-  margin: 10px;
+}
+section.artiste .premier .container-text p:nth-child(1) {
+  margin-top: 20px;
+}
+section.artiste .premier .container-text p:nth-child(2) {
+  border-bottom: solid 1px #84DAE2;
+  padding-bottom: 20px;
+  width: 240px;
 }
 section.artiste .deuxieme {
-  width: calc(30% - 20px);
+  width: calc(40% - 20px);
   margin: 10px;
   padding-left: 0px;
+  justify-content: center;
 }
 section.artiste .deuxieme .container-image {
-  width: calc(30% - 20px);
-  margin: 10px;
+  width: calc(25% - 20px);
+  margin: 0px;
   height: 80px;
 }
 section.artiste .deuxieme .container-text {
-  width: calc(40% - 20px);
-  margin: 10px;
-  border-bottom: solid 1px #84DAE2;
+  width: calc(36% - 20px);
 }
 section.artiste .deuxieme .container-text p {
-  width: calc(100% - 20px);
-  margin: 10px;
+  width: calc(80% - 20px);
+}
+section.artiste .deuxieme .container-text p:nth-child(1) {
+  margin-top: 20px;
+}
+section.artiste .deuxieme .container-text p:nth-child(2) {
+  border-bottom: solid 1px #84DAE2;
+  padding-bottom: 20px;
+  width: 240px;
 }
 section.infos {
   padding-top: 50px;
@@ -592,13 +681,19 @@ section.infos .container-texte {
 }
 section.infos .container-texte p {
   padding: 20px;
-  padding-left: 50px;
+  padding-left: 70px;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 26px;
+  line-height: 29px;
   color: #FFFFFF;
+  padding-top: 45px;
+}
+section.infos .container-texte p strong {
+  font-weight: 500;
+  font-size: 35px;
+  padding-left: 10px;
 }
 section.avis {
   padding-bottom: 50px;
@@ -658,7 +753,7 @@ section.avis .container-formulaire .formulaire .box select {
   outline: 0;
   box-shadow: none;
   border: 0 !important;
-  background: white;
+  background: #FFF2F2;
   background-image: none;
 }
 section.avis .container-formulaire .formulaire .box select::-ms-expand {
@@ -713,6 +808,7 @@ section.avis .container-formulaire .envo {
   border-radius: 5px;
   background-color: transparent;
   font-weight: 700;
+  cursor: pointer;
 }
 section.avis .container-formulaire p {
   padding-top: 50px;
@@ -724,9 +820,15 @@ section.avis .container-formulaire p a {
   text-decoration: underline;
 }
 section.avis .container-formulaire .com textarea {
-  width: 1200px;
+  width: 1300px;
   height: 300px;
   resize: none;
+  background: rgba(250, 250, 250, 0.91);
+}
+section.avis .container-formulaire .com textarea::-webkit-input-placeholder {
+  font-size: 20px;
+  opacity: 0.6;
+  padding: 70px;
 }
 section.commentaire h3 {
   font-family: Roboto;
@@ -771,10 +873,25 @@ section.commentaire article.commentaire-un .profils img {
 section.commentaire article.commentaire-un .textes {
   width: calc(60% - 60px);
   margin: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+section.commentaire article.commentaire-un .textes h4 {
+  opacity: 0.6;
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+section.commentaire article.commentaire-un .textes p {
+  font-size: 20px;
+  opacity: 0.6;
+  width: 900px;
+  line-height: 28px;
 }
 section.commentaire article.commentaire-un .notation-commentaires {
   width: calc(20% - 60px);
   margin: 30px;
+  justify-content: center;
+  align-items: center;
 }
 section.commentaire article.commentaire-un .notation-commentaires i {
   color: gold;
@@ -806,10 +923,25 @@ section.commentaire article.commentaire-deux .profils img {
 section.commentaire article.commentaire-deux .textes {
   width: calc(60% - 60px);
   margin: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+section.commentaire article.commentaire-deux .textes h4 {
+  opacity: 0.6;
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+section.commentaire article.commentaire-deux .textes p {
+  font-size: 20px;
+  opacity: 0.6;
+  width: 900px;
+  line-height: 28px;
 }
 section.commentaire article.commentaire-deux .notation-commentaires {
   width: calc(20% - 60px);
   margin: 30px;
+  justify-content: center;
+  align-items: center;
 }
 section.commentaire article.commentaire-deux .notation-commentaires i {
   color: gold;
@@ -841,10 +973,25 @@ section.commentaire article.commentaire-trois .profils img {
 section.commentaire article.commentaire-trois .textes {
   width: calc(60% - 60px);
   margin: 30px;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+section.commentaire article.commentaire-trois .textes h4 {
+  opacity: 0.6;
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+section.commentaire article.commentaire-trois .textes p {
+  font-size: 20px;
+  opacity: 0.6;
+  width: 900px;
+  line-height: 28px;
 }
 section.commentaire article.commentaire-trois .notation-commentaires {
   width: calc(20% - 60px);
   margin: 30px;
+  justify-content: center;
+  align-items: center;
 }
 section.commentaire article.commentaire-trois .notation-commentaires i {
   color: gold;
@@ -1075,10 +1222,13 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
 }
 #nave {
   position: absolute;
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background: linear-gradient(180deg, #30d4de 0%, rgba(48, 212, 222, 0.6) 99.25%, rgba(48, 212, 222, 0.3) 100%);
+  mix-blend-mode: normal;
+  box-shadow: 1px 5px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
   height: 100vh;
   width: 100%;
-  top: 0;
+  top: 0px;
   left: -2100px;
   z-index: 30;
   transition: all 0.5s;
@@ -1110,6 +1260,7 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
 #nave .vl {
   border-left: 1px solid #fff;
   height: 300px;
+  margin-top: -30px;
 }
 #nave .menu-container {
   padding: 10px;
@@ -1122,15 +1273,14 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
   position: absolute;
   top: 10px;
   left: 30px;
-  background: rgba(245, 254, 255, 0.13);
-  border-radius: 50%;
   width: 35px;
   height: 35px;
   cursor: pointer;
+  outline: none;
 }
 #nave .menu-container .menu-close span.cross-un {
   z-index: 16;
-  height: 5px;
+  height: 2px;
   width: 20px;
   background-color: white;
   position: absolute;
@@ -1141,7 +1291,7 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
 }
 #nave .menu-container .menu-close span.cross-deux {
   z-index: 14;
-  height: 5px;
+  height: 2px;
   width: 20px;
   background-color: white;
   position: absolute;
@@ -1152,15 +1302,19 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
 }
 #nave .menu-container .menutitle {
   margin-left: 60px;
-  margin-top: 0px;
+  margin-top: -3px;
   color: white;
+  font-size: 20px;
+  font-weight: 300;
 }
 #nave .flex-container {
   display: flex;
   margin-left: 2%;
+  margin-top: 60px;
 }
 #nave .flex-container .menu {
-  width: 13%;
+  margin-left: 40px;
+  width: 10%;
 }
 #nave .flex-container .menu-container,
 #nave .flex-container .menu,
@@ -1177,7 +1331,9 @@ section.commentaire article.commentaire-trois .notation-commentaires .deux {
   line-height: 40px;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  margin-left: 40px;
+}
+#nave .flex-container .menuthemes {
+  margin-left: 60px;
 }
 .burger {
   width: 10%;
