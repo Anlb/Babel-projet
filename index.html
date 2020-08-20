@@ -18,7 +18,39 @@
 <body>
 <main>
   <div class="containercolor">
-   <header class="flex">
+   <header>
+<!--//---------------------------------------------------------pop-up-connection-->
+    <div class="pop-up-profil">
+      <div class="profil-close flex">
+          <span></span>
+      </div>
+      <div class="photo">
+        <div class="lueur">
+        </div>
+        <span></span>
+      </div>
+      <h3>Connectez vous à votre compte</h3>
+      <div class="container-input flex">
+        
+        <input type="text" placeholder="Adresse Electronique">
+        <input type="password" placeholder="Mot de passe">
+        <a href="">Mot de passe oublié?</a>
+      </div>
+      <div class="choix flex">
+        <h2>rester connecté</h2>
+        <div class="check flex">
+          <span><i class="fas fa-check"></i></span>
+        </div>
+        <span></span>
+      </div>
+      <div class="container-button flex">
+        <div class="ident">
+          identifiez-vous
+        </div>
+        <h3>vous n'avez pas encore de compte?</h3>
+        <div class="ins">inscrivez-vous</div>
+      </div>
+    </div>
 <!--//--------------------------------------burger----------------------------------//-->
  <div class="burger">
         <span></span>
@@ -81,24 +113,25 @@
   
    </header>
    <div class="carousel">
-       <div class="imagequatre">
+       <div class="imagequatre blur">
            <figure></figure>
        </div>
-       <div class="imagedeux">
+       <div class="imagedeux second">
            <figure></figure>
        </div>
-       <div class="imagetrois">
+       <div class="imagetrois blur-two">
            <figure></figure>
        </div>
-       <div class="imageun flex">
+       <div class="imageun first flex">
            <a href="detail.html"></a>
+           <div class="container-text">
            <div class="text">
               
                <h1>SKY DOLL</h1>
                <p>Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem . </p>
-               <div class="suivantdroit-text"><span></span></div>
+               <div class="chevron"><span></span></div>
            </div>
-           
+          </div>
        </div>
        
        <div class="suivantdroit"><span></span></div>
@@ -136,6 +169,22 @@
     function close(){
         const navMenu = document.querySelector('#nave');
         navMenu.classList.remove('active-menu');
+    }
+
+    
+    const openProfil = document.querySelector('.profil');
+    openProfil.addEventListener('click', openProf);
+    function openProf(){
+        const isOpen = document.querySelector('.pop-up-profil');
+        isOpen.classList.add('active-menu-profil');
+    }
+    
+
+    const choixCo = document.querySelector('.check');
+    choixCo.addEventListener('click', toggleChoix);
+    function toggleChoix(){
+        
+        choixCo.classList.toggle('check-active');
     }
     
 </script>
