@@ -19,6 +19,12 @@
 <main>
   <div class="containercolor">
    <header class="flex">
+
+    <div class="pop-up-profil">
+      <div class="profil-close">
+
+      </div>
+    </div>
 <!--//--------------------------------------burger----------------------------------//-->
  <div class="burger">
         <span></span>
@@ -81,24 +87,25 @@
   
    </header>
    <div class="carousel">
-       <div class="imagequatre">
+       <div class="imagequatre blur">
            <figure></figure>
        </div>
-       <div class="imagedeux">
+       <div class="imagedeux second">
            <figure></figure>
        </div>
-       <div class="imagetrois">
+       <div class="imagetrois blur-two">
            <figure></figure>
        </div>
-       <div class="imageun flex">
+       <div class="imageun first flex">
            <a href="detail.html"></a>
+           <div class="container-text">
            <div class="text">
               
                <h1>SKY DOLL</h1>
                <p>Nisi mihi Phaedrum, inquam, tu mentitum aut Zenonem putas, quorum utrumque audivi, cum mihi nihil sane praeter sedulitatem probarent, omnes mihi Epicuri sententiae satis notae sunt. atque eos, quos nominavi, cum Attico nostro frequenter audivi, cum miraretur ille quidem . </p>
-               <div class="suivantdroit-text"><span></span></div>
+               <div class="chevron"><span></span></div>
            </div>
-           
+          </div>
        </div>
        
        <div class="suivantdroit"><span></span></div>
@@ -136,6 +143,14 @@
     function close(){
         const navMenu = document.querySelector('#nave');
         navMenu.classList.remove('active-menu');
+    }
+
+    
+    const openProfil = document.querySelector('.profil');
+    openProfil.addEventListener('click', openprof);
+    function openprof(){
+        const isOpen = document.querySelector('.pop-up-profil');
+        isOpen.classList.add('.active-menu-profil');
     }
     
 </script>
